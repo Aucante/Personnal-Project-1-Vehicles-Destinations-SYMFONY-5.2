@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HOME{% endblock %}
+
+{% block content1 %}
+<div class="row">
+    <div class="col">
+        <div class="titre_home">
+            <h1>RENT & EXPLORE</h1>
+            <p>Explore, share your idea or contact me</p>
+        </div>
+        <div>
+            <a href="{{ path('vehicule_list') }}"><button type="button">Explore</button></a>
+        </div>
+    </div>
+    <div class="col">
+        <a href="{{ path('vehicule_list') }}">
+        <div class="card card1">
+            <h5 class="titres_vignettes_home">CONTACT</h5>
+            <p>
+            </p>
+        </div>
+        </a>
+        <a href="{{ path('vehicule_create') }}">
+        <div class="card card2">
+            <h5 class="titres_vignettes_home">CREATE</h5>
+            <p>
+            </p>
+        </div>
+        </a>
+
+    <div class="col">
+        <a href="{{ path('vehicule_list') }}">
+        <div class="card card3">
+            <h5 class="titres_vignettes_home">EXPLORE</h5>
+            <p>
+            </p>
+        </div>
+        </a>
+
+        <div class="card card4">
+            <h5></h5>
+            <p>
+            </p>
+        </div>
+    </div>
+     <div class="col">
+        <div class="card card5">
+            <h5></h5>
+            <p>
+            </p>
+        </div>
+        <div class="card card6">
+            <h5></h5>
+            <p>
+            </p>
+        </div>
+     </div>
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{# block content2 %}
+
+    <div class="row2">
+        {% for vehicule in vehicules %}
+            <div class="col2">
+                <a href="{{ path('vehicule_details', { 'id':vehicule.id }) }}">
+                    <div class="poster poster1" style="background-image: url(img/posters/{{ vehicule.poster }})">
+                        <h5>{{ vehicule.name | upper }}</h5>
+                        <p>{{ vehicule.description }}
+                        </p>
+
+                    </div>
+                </a>
+
+
+            </div>
+        {% endfor %}
+    </div>
+{# endblock #}

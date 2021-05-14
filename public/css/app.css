@@ -1,0 +1,315 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: Lato, sans-serif;
+    color: white;
+
+}
+
+label
+{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+div > input, textarea, select, text
+{
+    box-sizing: border-box;
+    width: 420px;
+    min-width: 200px;
+    color: rgba(0,0,0,0.7);
+    border-radius: 5px;
+    height: 50px;
+
+
+}
+
+.flash
+{
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.flash-success
+{
+    background-color: #09b819;
+}
+
+#form
+{
+    position: absolute;
+    top: 20%;
+    left: 38%;
+    transform: translate(-10%, -10%);
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.5);
+    padding: 40px;
+    border-radius: 15px;
+    width: 500px;
+
+
+}
+
+.form
+{
+    margin-left: 120px;
+}
+
+
+.container
+{
+
+    width: 100%;
+    min-width: 90%;
+    height: 100vh;
+    background-position: center;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../img/posters/scandinavie.jpg");
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+
+
+
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 70px;
+}
+
+
+.logo
+{
+    width: 50px;
+    cursor: pointer;
+}
+.menu-icon
+{
+    width: 30px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+nav
+{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li
+{
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+nav ul li a
+{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+
+}
+nav ul li a:hover
+{
+    color: #266a79;
+    text-decoration: blink;
+}
+.row
+{
+    display: flex;
+    height: 55%;
+
+
+
+
+}
+
+
+.col
+{
+    flex-basis: 50%;
+
+}
+
+h1
+{
+    color: #fff;
+    font-size: 70px;
+
+}
+
+p{
+    color: #fff;
+    font-size: 16px;
+    line-height: 15px;
+}
+
+.titre_home
+{
+    font-size: 30px;
+}
+
+button
+{
+    width: 180px;
+    color: #000;
+    font-size: 18px;
+
+    padding: 12px 0;
+
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+
+}
+div button
+{
+    margin-top: 70px;
+
+}
+
+button:hover
+{
+    color: white;
+    background-color: #266a79;
+    text-decoration: blink;
+}
+
+/* container1 : partie haute/droite du main */
+
+.card
+{
+    float: right;
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 10px;
+
+    background-position: center;
+    background-size: cover;
+    transition: translate 0.5s;
+    margin-top: 300px;
+
+}
+
+.cardDetails
+{
+    float: right;
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    margin: 10px 10px;
+    background-position: center;
+    background-size: cover;
+    transition: translate 0.5s;
+    margin-top: 150px;
+}
+
+
+
+.card1
+{
+    background-image: url("../img/posters/contact1.jpg");
+}
+
+
+.card2
+{
+    background-image: url("../img/posters/create.jpg");
+}
+
+.card3
+{
+    background-image: url("../img/posters/bike1.jpg");
+}
+/*
+.card5
+{
+    background-image: url("../img/posters/car1.jpg");
+}
+*/
+
+
+
+
+.card:hover
+{
+    transform: translateY(-10px);
+}
+
+.titres_vignettes_home
+{
+    font-size: 30px;
+}
+
+h5
+{
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 0 10px #888;
+    width: 5vw;
+    height: 10vh;
+}
+.card p
+{
+    text-shadow: 0 0 25px #000;
+    font-size: 12px;
+    margin-top: 10px;
+    width: 5vw;
+    height: 10vh;
+}
+
+/* container 2 : partie basse du main */
+.poster
+{
+    float: left;
+    width: 25vw;
+    height: 30vh;
+    max-width: 370px;
+    max-height: 200px;
+    min-width: 50px;
+    min-height: 100px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 10px;
+
+    background-position: center;
+    background-size: cover;
+    transition: translate 0.5s;
+
+
+
+}
+
+
+.poster:hover
+{
+    transform: translateY(-10px);
+}
+
+.container2
+{
+    margin-top: 50px;
+
+}

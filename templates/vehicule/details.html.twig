@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+    {{ vehicule.name }}
+
+{% endblock %}
+
+{% block content1 %}
+
+    <div class="row">
+        <div class="col">
+            <div class="titre_home">
+                <h1>{{ vehicule.name | upper }}</h1>
+                <p>{{ vehicule.description }}</p>
+            </div>
+            <div>
+                <a href="{{ path('main_home') }}"><button type="button">HOME</button></a>
+            </div>
+        </div>
+        <div class="col">
+                {{ dump(vehicule.poster) }}
+                <div class="cardDetails" style="background-image: url(../img/posters/car1.jpg)">
+                    <h5 class="titres_vignettes_details">{{ vehicule.name | upper }}</h5>
+                    <p>{{ vehicule.description }}</p>
+                </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

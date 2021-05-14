@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create
+    toto afficher formulaire du vehicule
+
+{% endblock %}
+
+{% block content1 %}
+
+    <div id="form">
+        {{ form_start(vehiculeForm1) }}
+
+
+
+        {{ form_widget(vehiculeForm1) }}
+
+        <button class="form">CREATE</button>
+
+        {{ form_end(vehiculeForm1) }}
+
+    </div>
+
+{% endblock %}
