@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Vehicule;
 use App\Form\VehiculeType;
+use App\Repository\DestinationRepository;
 use App\Repository\VehiculeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,13 +34,19 @@ class VehiculeController extends AbstractController
      * @Route("/details/{id}", name="details")
      */
 
-    public function details(int $id, VehiculeRepository $vehiculeRepository): Response
+    public function details(int $id, VehiculeRepository $vehiculeRepository, DestinationRepository $destinationRepository): Response
     {
         $vehicule = $vehiculeRepository->find($id);
 
+        $destinations[] = $destinationRepository->findAll();
+
+
+
 
         return $this->render('vehicule/details.html.twig', [
-            "vehicule" => $vehicule
+            "vehicule" => $vehicule,
+            "destinations" => $destinations,
+
         ]);
     }
 
@@ -74,6 +81,37 @@ class VehiculeController extends AbstractController
             'vehiculeForm1' => $vehiculeForm->createView()
         ]);
     }
+
+
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+
+    public function delete(int $id, VehiculeRepository $vehiculeRepository): Response
+    {
+        $vehicule = $vehiculeRepository->find($id);
+
+        return $this->render('vehicule/delete.html.twig', [
+            "vehicule" => $vehicule
+        ]);
+    }
+
+    /**
+     * @Route("/deleteId/{id}", name="deleteId")
+     */
+
+    public function deleteId(Vehicule $vehicule, EntityManagerInterface $entityManager)
+    {
+        $entityManager->remove($vehicule);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('main_home');
+
+
+        return $this->render('vehicule/deleteId.html.twig');
+    }
+
+
 
 
 

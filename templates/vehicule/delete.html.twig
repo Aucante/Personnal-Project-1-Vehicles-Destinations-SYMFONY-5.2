@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delete
+
+{% endblock %}
+
+{% block content1 %}
+
+    <div class="row">
+        <div class="col">
+            <div class="titre_home">
+                <h1>ARE YOU SURE ?</h1>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="deleteCancel">
+    <a href="{{ path('vehicule_deleteId', { 'id':vehicule.id }) }}"><button class="formDelete">DELETE</button></a>
+    <br>
+    <a href="{{ path('vehicule_details', { 'id':vehicule.id }) }}"><button class="formCancel">RETURN {{ vehicule.name | upper }}</button></a>
+    </div>
+{% endblock %}
+
+{% block content2 %}
+
+{% endblock %}

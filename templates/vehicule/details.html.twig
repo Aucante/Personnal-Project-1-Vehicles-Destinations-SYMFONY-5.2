@@ -15,11 +15,16 @@
                 <p>{{ vehicule.description }}</p>
             </div>
             <div>
-                <a href="{{ path('main_home') }}"><button type="button">HOME</button></a>
+                {% if vehicule.id > 4 %}
+                <a href="{{ path('vehicule_delete', { 'id':vehicule.id })}}"><button type="button">DELETE</button></a>
+                {% else %}
+                <a href="{{ path('main_home')}}"><button type="button">HOME</button></a>
+                {% endif %}
+
             </div>
         </div>
         <div class="col">
-                {{ dump(vehicule.poster) }}
+
                 <div class="cardDetails" style="background-image: url(../img/posters/car1.jpg)">
                     <h5 class="titres_vignettes_details">{{ vehicule.name | upper }}</h5>
                     <p>{{ vehicule.description }}</p>
@@ -28,5 +33,24 @@
         </div>
     </div>
 
+
+{% endblock %}
+
+
+{% block content2 %}
+    <div class="row2">
+    {% for destination in destinations %}
+    <div class="col2">
+       <!-- <a href="{# path('vehicule_details', { 'id':destination.id }) #}"> -->
+
+                <p>{{ destination.id }}</p>
+
+
+            </div>
+
+
+
+    </div>
+    {% endfor %}
 
 {% endblock %}
