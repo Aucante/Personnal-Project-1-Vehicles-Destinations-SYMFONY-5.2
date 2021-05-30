@@ -22,10 +22,17 @@
                 {% endif %}
 
             </div>
+            <div>
+                {% if vehicule.destinations | length < 4 %}
+                    <a href="{{ path('destination_add', { 'id':vehicule.id })}}"><button type="button">ADD</button></a>
+
+                {% endif %}
+
+            </div>
         </div>
         <div class="col">
 
-                <div class="cardDetails" style="background-image: url(../img/posters/car1.jpg)">
+                <div class="cardDetails" id="{{ vehicule.name }}">
                     <h5 class="titres_vignettes_details">{{ vehicule.name | upper }}</h5>
                     <p>{{ vehicule.description }}</p>
                 </div>
@@ -40,17 +47,21 @@
 {% block content2 %}
     <div class="row2">
     {% for destination in destinations %}
-    <div class="col2">
-       <!-- <a href="{# path('vehicule_details', { 'id':destination.id }) #}"> -->
-
-                <p>{{ destination.id }}</p>
-
-
-            </div>
-
+        <div class="col2">
+            <a href="{{ path('destination_details', {'id':destination.id }) }}">
+                <div class="poster" id="{{ destination.name }}">
+                    <h5>{{ destination.name | upper }}</h5>
+                    <p>{{ destination.description }}
+                    </p>
 
 
-    </div>
+                </div>
+            </a>
+
+
+        </div>
     {% endfor %}
+    </div>
+
 
 {% endblock %}

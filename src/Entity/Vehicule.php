@@ -28,12 +28,14 @@ class Vehicule
     private $name;
 
     /**
+     * @Assert\NotBlank(message="Please provide a name for the vehicule")
+     * @Assert\Length(min=2, max=20, minMessage="You must provide 2 character at least", maxMessage="You can't provide more than 20 character")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
-     * @Assert\Range(min="0", max="5", notInRangeMessage="Please provide a number between in 0 and 5")
+     * @Assert\Range(min="0", max="5", notInRangeMessage="You must be between 1 and 5")
      * @ORM\Column(type="decimal", precision=1, scale=0, nullable=true)
      */
     private $note;

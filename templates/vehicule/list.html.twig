@@ -21,7 +21,8 @@
 {% block content2 %}
 
     <div class="row2">
-        {% for vehicule in vehicules %}
+
+        {% for vehicule in vehicules | slice(vehicules | length -4 , vehicules | length) %}
         <div class="col2">
             <a href="{{ path('vehicule_details', { 'id':vehicule.id }) }}">
             <div class="poster" style="background-image: url(../img/posters/{{ vehicule.poster }})">
@@ -36,6 +37,7 @@
 
         </div>
         {% endfor %}
+
     </div>
 
 {% endblock %}

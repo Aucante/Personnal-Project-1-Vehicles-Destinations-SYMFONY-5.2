@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Destination;
 use App\Entity\Vehicule;
+use App\Form\DestinationType;
 use App\Form\VehiculeType;
 use App\Repository\DestinationRepository;
 use App\Repository\VehiculeRepository;
@@ -38,14 +40,14 @@ class VehiculeController extends AbstractController
     {
         $vehicule = $vehiculeRepository->find($id);
 
-        $destinations[] = $destinationRepository->findAll();
+        $destinations = $vehicule->getDestinations();
 
 
 
 
         return $this->render('vehicule/details.html.twig', [
             "vehicule" => $vehicule,
-            "destinations" => $destinations,
+            "destinations" => $destinations
 
         ]);
     }
@@ -54,8 +56,10 @@ class VehiculeController extends AbstractController
      * @Route("/create", name="create")
      */
 
-    public function create(Request $request, EntityManagerInterface $entityManager): Response
+    public function create(Request $request, VehiculeRepository $vehiculeRepository, EntityManagerInterface $entityManager): Response
     {
+        $vehicules = $vehiculeRepository->findAll();
+
         $vehicule = new Vehicule();
         $vehicule->setDateCreated(new \DateTime());
 
@@ -71,14 +75,15 @@ class VehiculeController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Vehicle added!');
-            return $this->redirectToRoute('vehicule_details', ['id' => $vehicule->getId()]);
+            return $this->redirectToRoute('vehicule_list');
 
         }
 
 
 
         return $this->render('vehicule/create.html.twig', [
-            'vehiculeForm1' => $vehiculeForm->createView()
+            'vehiculeForm1' => $vehiculeForm->createView(),
+            'vehicules' => $vehicules
         ]);
     }
 
@@ -105,12 +110,11 @@ class VehiculeController extends AbstractController
         $entityManager->remove($vehicule);
         $entityManager->flush();
 
-        return $this->redirectToRoute('main_home');
+        return $this->redirectToRoute('vehicule_list');
 
 
         return $this->render('vehicule/deleteId.html.twig');
     }
-
 
 
 

@@ -28,6 +28,16 @@ div > input, textarea, select, text
 
 }
 
+ul
+{
+    list-style-type: none;
+}
+
+ul > li
+{
+    color: #e00a0a;
+}
+
 .flash
 {
     padding: 20px;
@@ -129,9 +139,6 @@ nav ul li a:hover
     display: flex;
     height: 55%;
 
-
-
-
 }
 
 
@@ -156,7 +163,7 @@ p{
 
 .titre_home
 {
-    font-size: 30px;
+    font-size: 24px;
 }
 
 button
@@ -206,17 +213,50 @@ button:hover
     margin-top: 300px;
 
 }
-
-.cardDetails
+.poster
 {
-    float: right;
-    width: 200px;
-    height: 230px;
+    float: left;
+    width: 25vw;
+    height: 30vh;
+    max-width: 370px;
+    max-height: 200px;
+    min-width: 50px;
+    min-height: 100px;
     display: inline-block;
     border-radius: 10px;
     padding: 15px 15px;
     box-sizing: border-box;
+    cursor: pointer;
     margin: 10px 10px;
+
+    background-position: center;
+    background-size: cover;
+    transition: translate 0.5s;
+
+
+
+}
+
+
+.poster:hover
+{
+    transform: translateY(-10px);
+}
+
+.cardDetails
+{
+    float: right;
+    width: 30vw;
+    height: 20vh;
+    max-width: 200px;
+    max-height: 230px;
+    min-width: 50px;
+    min-height: 100px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    margin: 0px 0px;
     background-position: center;
     background-size: cover;
     transition: translate 0.5s;
@@ -278,35 +318,6 @@ h5
 }
 
 /* container 2 : partie basse du main */
-.poster
-{
-    float: left;
-    width: 25vw;
-    height: 30vh;
-    max-width: 370px;
-    max-height: 200px;
-    min-width: 50px;
-    min-height: 100px;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 15px 15px;
-    box-sizing: border-box;
-    cursor: pointer;
-    margin: 10px 10px;
-
-    background-position: center;
-    background-size: cover;
-    transition: translate 0.5s;
-
-
-
-}
-
-
-.poster:hover
-{
-    transform: translateY(-10px);
-}
 
 .container2
 {
@@ -320,3 +331,106 @@ h5
     margin-top: 10%;
 }
 
+
+
+#car
+{
+    background-image: url(../img/posters/car1.jpg);
+}
+
+#helicopter
+{
+    background-image: url(../img/posters/helico1.jpg);
+}
+
+#bike
+{
+    background-image: url(../img/posters/bike1.jpg);
+}
+
+#boat
+{
+    background-image: url(../img/posters/boat1.jpg);
+}
+
+#Motorbike
+{
+    background-image: url(../img/posters/motorbike1.jpg);
+}
+
+#Plane
+{
+    background-image: url(../img/posters/plane2.jpg);
+}
+
+
+
+#Ljubljana
+{
+    background-image: url(../img/posters/slovenia.jpg);
+}
+
+#japan
+{
+    background-image: url(../img/posters/japan.jpg);
+}
+
+#lecap
+{
+    background-image: url(../img/posters/lecap.jpg);
+}
+
+#sydney
+{
+    background-image: url(../img/posters/sydney.jpg);
+}
+
+#helsinki
+{
+    background-image: url(../img/posters/finland.jpg);
+}
+
+#medellin
+{
+    background-image: url(../img/posters/medellin.jpg);
+}
+
+#moscou
+{
+    background-image: url(../img/posters/moscou.jpg);
+}
+
+#Groenland
+{
+    background-image: url(../img/posters/glaciers.jpg);
+}
+
+#Canada
+{
+    background-image: url(../img/posters/poster6.jpg);
+}
+
+#USA
+{
+    background-image: url(../img/posters/westamerica.jpg);
+}
+
+#Iceland
+{
+    background-image: url(../img/posters/iceland.jpg);
+}
+
+#Mallorca
+{
+    background-image: url(../img/posters/caraibes.jpg);
+}
+
+table
+{
+    margin: auto;
+    width: 200px;
+    height: 400px;
+    min-width: 50px;
+    min-height: 100px;
+
+}

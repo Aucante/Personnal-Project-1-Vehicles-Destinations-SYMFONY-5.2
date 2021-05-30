@@ -3,10 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Vehicule;
-use Doctrine\DBAL\Types\TextType;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -26,9 +27,11 @@ class VehiculeType extends AbstractType
                 'label' => 'DESCRIPTION',
                 'required' => false,
             ])
-            ->add('note')
+            ->add('note', TextType::class, [
+                'label' => 'RATING'
+            ])
             ->add('backdrop', ChoiceType::class, [
-                'label' => 'IMAGE',
+                'label' => 'PICTURE',
                 'choices' => [
                     'Motorbike' => 'motorbike1.jpg',
                     'Plane' => 'hydravion1.jpg'

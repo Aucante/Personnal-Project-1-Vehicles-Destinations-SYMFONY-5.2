@@ -6,11 +6,11 @@
 {% endblock %}
 
 {% block content1 %}
-
+    {% if vehicules | length < 6 %}
     <div id="form">
         {{ form_start(vehiculeForm1) }}
 
-
+        {{ form_errors(vehiculeForm1) }}
 
         {{ form_widget(vehiculeForm1) }}
 
@@ -19,5 +19,11 @@
         {{ form_end(vehiculeForm1) }}
 
     </div>
+
+    {% else %}
+
+    <p> You can't add another vehicle.</p>
+
+    {% endif %}
 
 {% endblock %}
